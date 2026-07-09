@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import logoIcon from "../assets/logo-icon.png";
 import { contact } from "../data/content";
 import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="contact" className="relative overflow-hidden bg-white py-24">
+      <img
+        src={logoIcon}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 -bottom-24 w-[28rem] opacity-[0.04]"
+      />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
             <span className="text-sm font-semibold uppercase tracking-wide text-primary">

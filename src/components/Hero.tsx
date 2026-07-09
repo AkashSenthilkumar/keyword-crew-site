@@ -1,24 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Search, MousePointerClick, Share2 } from "lucide-react";
-import logoHero from "../assets/logo-hero-3d.png";
+import { ArrowRight, ShieldCheck, TrendingUp } from "lucide-react";
+import heroTeam from "../assets/hero-team.jpg";
 import { contact, stats } from "../data/content";
 import Counter from "./Counter";
-
-const badges = [
-  { icon: Search, label: "SEO", className: "-top-4 -left-8", delay: 0 },
-  {
-    icon: MousePointerClick,
-    label: "Ads",
-    className: "top-1/3 -right-10",
-    delay: 0.6,
-  },
-  {
-    icon: Share2,
-    label: "Social",
-    className: "-bottom-6 left-4",
-    delay: 1.2,
-  },
-];
 
 export default function Hero() {
   return (
@@ -26,6 +10,7 @@ export default function Hero() {
       id="home"
       className="gradient-navy-royal relative overflow-hidden pt-32 pb-20 text-white"
     >
+      <div className="bg-dot-grid-light pointer-events-none absolute inset-0" />
       <motion.div
         className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-highlight/20 blur-3xl"
         animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
@@ -36,6 +21,7 @@ export default function Hero() {
         animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
+      <div className="pointer-events-none absolute top-24 left-1/3 h-64 w-64 rounded-full border border-dashed border-white/10" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:px-8">
         <motion.div
@@ -88,43 +74,58 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="relative flex justify-center lg:justify-end"
+          className="relative mx-auto max-w-md lg:mx-0 lg:ml-auto"
         >
-          <div className="relative rounded-3xl bg-white/5 p-10 backdrop-blur-sm ring-1 ring-white/10">
-            <motion.img
-              src={logoHero}
-              alt="Keyword Crew"
-              className="w-64 drop-shadow-2xl sm:w-80"
-              animate={{ y: [0, -14, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
+          <div className="absolute -inset-4 rounded-[2.5rem] bg-highlight/10 blur-2xl" />
 
-            {badges.map(({ icon: Icon, label, className, delay }) => (
-              <motion.div
-                key={label}
-                className={`absolute flex items-center gap-2 rounded-full bg-white/95 px-3 py-2 text-xs font-semibold text-secondary shadow-lg ${className}`}
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay,
-                }}
-              >
-                <span className="flex h-5 w-5 items-center justify-center rounded-full gradient-royal-sky text-white">
-                  <Icon size={12} />
-                </span>
-                {label}
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            className="relative overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/10"
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <img
+              src={heroTeam}
+              alt="Keyword Crew team analyzing campaign performance dashboards"
+              className="aspect-[4/5] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="absolute -top-5 right-4 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-white shadow-lg"
+          >
+            <ShieldCheck size={14} className="text-highlight" />
+            Trusted, Transparent, ROI-First
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 text-secondary shadow-xl"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full gradient-royal-sky text-white">
+              <TrendingUp size={18} />
+            </span>
+            <div>
+              <p className="text-lg font-extrabold leading-none">
+                <Counter to={11} />+
+              </p>
+              <p className="mt-1 text-xs font-medium text-secondary/60">
+                Core Growth Services
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
 
-      <div className="relative mx-auto mt-20 grid max-w-7xl grid-cols-2 gap-6 border-t border-white/10 px-6 pt-10 sm:grid-cols-4 lg:px-8">
+      <div className="relative mx-auto mt-24 grid max-w-7xl grid-cols-2 gap-6 border-t border-white/10 px-6 pt-10 sm:grid-cols-4 lg:px-8">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center sm:text-left">
             <div className="text-3xl font-extrabold text-white sm:text-4xl">

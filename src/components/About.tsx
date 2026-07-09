@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import growthImg from "../assets/growth.jpg";
 import { whyChooseUs } from "../data/content";
 import Reveal, { RevealItem, RevealStagger } from "./Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="bg-white py-24">
+    <section id="about" className="bg-dot-grid relative bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2">
           <Reveal>
@@ -51,30 +52,51 @@ export default function About() {
 
           <div className="grid gap-6">
             <Reveal delay={0.1}>
-              <div className="rounded-2xl border border-accent/50 p-6 transition-shadow hover:shadow-md">
-                <h3 className="text-lg font-bold text-secondary">
-                  Our Vision
-                </h3>
-                <p className="mt-2 text-sm text-secondary/70 leading-relaxed">
-                  To become a trusted digital marketing agency in India,
-                  empowering businesses with innovative digital marketing,
-                  SEO, social media management, website development, and
-                  performance-driven growth solutions.
-                </p>
-              </div>
+              <motion.div
+                whileHover={{ scale: 1.01 }}
+                className="relative overflow-hidden rounded-2xl shadow-lg"
+              >
+                <img
+                  src={growthImg}
+                  alt="Growth, engineered"
+                  className="h-56 w-full object-cover sm:h-64"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="text-xl font-bold text-white">
+                    Growth, engineered.
+                  </p>
+                  <p className="mt-1 text-sm text-white/70">
+                    Every strategy is measured, reported, and optimized.
+                  </p>
+                </div>
+              </motion.div>
             </Reveal>
-            <Reveal delay={0.2}>
-              <div className="rounded-2xl gradient-navy-royal p-6 text-white">
-                <h3 className="text-lg font-bold">Our Mission</h3>
-                <p className="mt-2 text-sm text-white/80 leading-relaxed">
-                  To help businesses grow through result-driven SEO, Google
-                  Ads, social media marketing, website &amp; app development,
-                  branding, and lead generation &mdash; delivering measurable
-                  ROI, increased online visibility, and long-term digital
-                  success.
-                </p>
-              </div>
-            </Reveal>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              <Reveal delay={0.15}>
+                <div className="h-full rounded-2xl border border-accent/50 p-6 transition-shadow hover:shadow-md">
+                  <h3 className="text-lg font-bold text-secondary">
+                    Our Vision
+                  </h3>
+                  <p className="mt-2 text-sm text-secondary/70 leading-relaxed">
+                    To become a trusted digital marketing agency in India,
+                    empowering businesses with innovative digital marketing
+                    and performance-driven growth solutions.
+                  </p>
+                </div>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <div className="h-full rounded-2xl gradient-navy-royal p-6 text-white">
+                  <h3 className="text-lg font-bold">Our Mission</h3>
+                  <p className="mt-2 text-sm text-white/80 leading-relaxed">
+                    To help businesses grow through result-driven SEO, ads,
+                    social, and web &amp; app development &mdash; delivering
+                    measurable ROI and long-term digital success.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
 
             <RevealStagger className="grid grid-cols-2 gap-4">
               {whyChooseUs.map(({ icon: Icon, title }) => (

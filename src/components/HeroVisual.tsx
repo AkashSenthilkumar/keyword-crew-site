@@ -15,7 +15,7 @@ const chips = [
   {
     icon: Share2,
     label: "Social",
-    className: "bottom-24 right-8",
+    className: "top-1/2 left-6 -translate-y-1/2",
     delay: 0.8,
   },
 ];

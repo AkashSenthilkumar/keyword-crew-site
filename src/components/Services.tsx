@@ -8,7 +8,7 @@ export default function Services() {
   const [openId, setOpenId] = useState<string | null>(services[0].id);
 
   return (
-    <section id="services" className="bg-dot-grid bg-secondary/[0.03] py-24">
+    <section id="services" className="bg-secondary/[0.03] py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wide text-primary">

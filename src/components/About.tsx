@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import growthImg from "../assets/growth.jpg";
+import GrowthChart from "./GrowthChart";
 import { whyChooseUs } from "../data/content";
 import Reveal, { RevealItem, RevealStagger } from "./Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="bg-dot-grid relative bg-white py-24">
+    <section id="about" className="relative bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2">
           <Reveal>
@@ -54,14 +54,12 @@ export default function About() {
             <Reveal delay={0.1}>
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="relative overflow-hidden rounded-2xl shadow-lg"
+                className="relative h-56 overflow-hidden rounded-2xl bg-secondary shadow-lg sm:h-64"
               >
-                <img
-                  src={growthImg}
-                  alt="Growth, engineered"
-                  className="h-56 w-full object-cover sm:h-64"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
+                <div className="absolute inset-0 opacity-70">
+                  <GrowthChart className="h-full w-full" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <p className="text-xl font-bold text-white">
                     Growth, engineered.

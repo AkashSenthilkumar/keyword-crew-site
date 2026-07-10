@@ -85,6 +85,5 @@ export const contact = {
   phoneHref: "tel:+919488125200",
   whatsappHref: "https://wa.me/919488125200",
   email: "keywordcrew@gmail.com",
-  address:
-    "5/421-2, Maniyakara Thottam, Arumugakavundanur, Perur Chettipalayam (PO), Coimbatore - 641010",
+  address: "Arumugakavundanur, Perur Chettipalayam, Coimbatore - 641010",
 };

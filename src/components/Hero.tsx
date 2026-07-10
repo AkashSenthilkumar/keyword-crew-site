@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, TrendingUp } from "lucide-react";
-import heroTeam from "../assets/hero-team.jpg";
 import { contact, stats } from "../data/content";
 import Counter from "./Counter";
+import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
   return (
@@ -10,7 +10,6 @@ export default function Hero() {
       id="home"
       className="gradient-navy-royal relative overflow-hidden pt-32 pb-20 text-white"
     >
-      <div className="bg-dot-grid-light pointer-events-none absolute inset-0" />
       <motion.div
         className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-highlight/20 blur-3xl"
         animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.8, 0.5] }}
@@ -21,7 +20,6 @@ export default function Hero() {
         animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
-      <div className="pointer-events-none absolute top-24 left-1/3 h-64 w-64 rounded-full border border-dashed border-white/10" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:px-8">
         <motion.div
@@ -77,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="relative mx-auto max-w-md lg:mx-0 lg:ml-auto"
+          className="relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto"
         >
           <div className="absolute -inset-4 rounded-[2.5rem] bg-highlight/10 blur-2xl" />
 
@@ -86,12 +84,7 @@ export default function Hero() {
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           >
-            <img
-              src={heroTeam}
-              alt="Keyword Crew team analyzing campaign performance dashboards"
-              className="aspect-[4/5] w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
+            <HeroVisual />
           </motion.div>
 
           <motion.div

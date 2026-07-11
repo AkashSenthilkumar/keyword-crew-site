@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronDown } from "lucide-react";
+import servicesIllustration from "../assets/illustrations/services-search.svg";
 import { services } from "../data/services";
 import Reveal, { RevealItem, RevealStagger } from "./Reveal";
 
@@ -10,19 +11,24 @@ export default function Services() {
   return (
     <section id="services" className="bg-secondary/[0.03] py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Our Services
-          </span>
-          <h2 className="mt-3 text-3xl font-bold text-secondary sm:text-4xl">
-            360&deg; Digital Marketing Services
-          </h2>
-          <p className="mt-4 text-secondary/70">
-            Everything your brand needs to increase online visibility,
-            generate quality leads, and maximize sales &mdash; under one
-            crew.
-          </p>
-        </Reveal>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <Reveal>
+            <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Our Services
+            </span>
+            <h2 className="mt-3 text-3xl font-bold text-secondary sm:text-4xl">
+              360&deg; Digital Marketing Services
+            </h2>
+            <p className="mt-4 text-secondary/70">
+              Everything your brand needs to increase online visibility,
+              generate quality leads, and maximize sales &mdash; under one
+              crew.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1} className="hidden justify-self-center lg:block">
+            <img src={servicesIllustration} alt="" className="w-full max-w-sm" />
+          </Reveal>
+        </div>
 
         <RevealStagger
           className="mt-14 grid gap-5 lg:grid-cols-2"

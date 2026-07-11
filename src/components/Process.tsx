@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import processIllustration from "../assets/illustrations/process-team.svg";
 import { process } from "../data/content";
 import Reveal, { RevealItem, RevealStagger } from "./Reveal";
 
@@ -7,6 +8,11 @@ export default function Process() {
     <section id="process" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
+          <img
+            src={processIllustration}
+            alt=""
+            className="mx-auto mb-4 w-full max-w-md"
+          />
           <span className="text-sm font-semibold uppercase tracking-wide text-primary">
             Our Process
           </span>

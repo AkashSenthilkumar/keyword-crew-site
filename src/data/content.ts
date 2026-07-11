@@ -87,3 +87,9 @@ export const contact = {
   email: "keywordcrew@gmail.com",
   address: "Arumugakavundanur, Perur Chettipalayam, Coimbatore - 641010",
 };
+
+export const socials = {
+  instagram: "https://www.instagram.com/keywordcrew?igsh=ZDA2ZW9iYTV0Mzdv",
+  facebook: "https://www.facebook.com/share/1PXELqUzd9/?mibextid=wwXIfr",
+  linkedin: "https://www.linkedin.com/company/keyword-crew/about/",
+};

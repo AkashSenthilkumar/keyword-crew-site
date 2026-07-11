@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Linkedin } from "./SocialIcons";
-import logoHorizontal from "../assets/logo-horizontal.png";
-import { contact } from "../data/content";
+import logoIcon from "../assets/logo-icon.png";
+import { contact, socials } from "../data/content";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -11,9 +11,9 @@ const NAV_LINKS = [
 ];
 
 const SOCIALS = [
-  { label: "Instagram", href: "#", icon: Instagram },
-  { label: "Facebook", href: "#", icon: Facebook },
-  { label: "LinkedIn", href: "#", icon: Linkedin },
+  { label: "Instagram", href: socials.instagram, icon: Instagram },
+  { label: "Facebook", href: socials.facebook, icon: Facebook },
+  { label: "LinkedIn", href: socials.linkedin, icon: Linkedin },
 ];
 
 export default function Footer() {
@@ -22,11 +22,12 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <img
-              src={logoHorizontal}
-              alt="Keyword Crew"
-              className="h-10 w-auto brightness-0 invert"
-            />
+            <div className="flex items-center gap-2">
+              <img src={logoIcon} alt="" className="h-9 w-auto" />
+              <span className="text-lg font-extrabold tracking-tight text-white">
+                KEYWORD CREW
+              </span>
+            </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed">
               The Crew Behind Your Digital Growth. A 360&deg; digital
               marketing agency in Coimbatore helping brands build visibility,
@@ -37,6 +38,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-primary"
                 >

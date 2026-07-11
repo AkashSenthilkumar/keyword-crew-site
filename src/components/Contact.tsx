@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import contactIllustration from "../assets/illustrations/contact-us.svg";
 import logoIcon from "../assets/logo-icon.png";
 import { contact } from "../data/content";
 import Reveal from "./Reveal";
@@ -75,6 +76,12 @@ export default function Contact() {
                 </div>
               </li>
             </ul>
+
+            <img
+              src={contactIllustration}
+              alt=""
+              className="mt-8 hidden w-full max-w-xs sm:block"
+            />
           </Reveal>
 
           <Reveal

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import GrowthChart from "./GrowthChart";
+import aboutIllustration from "../assets/illustrations/about-growth.svg";
 import { whyChooseUs } from "../data/content";
 import Reveal, { RevealItem, RevealStagger } from "./Reveal";
 
@@ -48,6 +49,12 @@ export default function About() {
                 timely execution, and measurable results.
               </p>
             </div>
+
+            <img
+              src={aboutIllustration}
+              alt=""
+              className="mx-auto mt-8 w-56 sm:w-64"
+            />
           </Reveal>
 
           <div className="grid gap-6">

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import heroVisual from "../assets/hero-visual.jpg";
 import { contact, stats } from "../data/content";
 import Counter from "./Counter";
-import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
   return (
@@ -75,45 +75,20 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto"
+          className="relative mx-auto w-full max-w-lg lg:mx-0 lg:ml-auto"
         >
           <div className="absolute -inset-4 rounded-[2.5rem] bg-highlight/10 blur-2xl" />
 
           <motion.div
-            className="relative overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/10"
+            className="relative aspect-[648/530] overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/10"
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           >
-            <HeroVisual />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="absolute -top-5 right-4 inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-xs font-semibold text-white shadow-lg"
-          >
-            <ShieldCheck size={14} className="text-highlight" />
-            Trusted, Transparent, ROI-First
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 text-secondary shadow-xl"
-          >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full gradient-royal-sky text-white">
-              <TrendingUp size={18} />
-            </span>
-            <div>
-              <p className="text-lg font-extrabold leading-none">
-                <Counter to={11} />+
-              </p>
-              <p className="mt-1 text-xs font-medium text-secondary/60">
-                Core Growth Services
-              </p>
-            </div>
+            <img
+              src={heroVisual}
+              alt="Keyword Crew growth dashboard"
+              className="h-full w-full object-cover"
+            />
           </motion.div>
         </motion.div>
       </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import GrowthChart from "./GrowthChart";
+import growthCardImage from "../assets/analytics-light.jpg";
 import aboutIllustration from "../assets/illustrations/about-growth.svg";
 import { whyChooseUs } from "../data/content";
 import Reveal, { RevealItem, RevealStagger } from "./Reveal";
@@ -63,10 +63,12 @@ export default function About() {
                 whileHover={{ scale: 1.01 }}
                 className="relative h-56 overflow-hidden rounded-2xl bg-secondary shadow-lg sm:h-64"
               >
-                <div className="absolute inset-0 opacity-70">
-                  <GrowthChart className="h-full w-full" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/10 to-transparent" />
+                <img
+                  src={growthCardImage}
+                  alt="Growth, engineered"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <p className="text-xl font-bold text-white">
                     Growth, engineered.
